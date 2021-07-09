@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="pomodoro.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="pomodoro.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-light main-nav">
+        <div class="container justify-content-center">
+            <ul class="nav navbar-nav flex-fill w-100 flex-nowrap">
+                <li class="nav-item active">
+                    <a class="nav-link" href="final.html" style='color: black;'>Home</a>
+                </li>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        
+                      </li>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style='color: black;'>
+                            Productivity Tools
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="list.html" style='color: black;'>To-do List</a>
+                            <a class="dropdown-item" href="Pomodoro.html" style='color: black;'>Pomodoro</a>
+                          </div>
+                      </li>
+                 
+                  </div>
+                
+
+            </ul>
+            <ul class="nav navbar-nav flex-fill justify-content-center">
+                <li class="nav-item">
+                    <a style="align-self: center;" class="navbar-brand" style='color: black;'>Time's Up</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav flex-fill w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="news.html" style='color: black;'>News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html" style='color: black;'>About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+      <h1>Pomodoro Timer</h1>
+      <p style='text-align: justify; padding: 10px;'>The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student.
+
+        The technique has been widely popularized by dozens of apps and websites providing timers and instructions. Closely related to concepts such as timeboxing and iterative and incremental development used in software design, the method has been adopted in pair programming contexts</p>
+      <div id="container">
+          <p id="work" class="label">Work:</p><p id="break" class="label">Break:</p><p id="cycles" class="label">Cycles:</p>
+          <!--Work Timer-->
+          <div id="work-timer" class="timer">
+              <p id="w_minutes">25</p><p class="semicolon">:</p><p id="w_seconds">00</p>
+          </div>
+  
+          <!--Cycle Counter-->
+          <p id="counter" class="timer">0</p>
+  
+          <!--Break Timer-->
+          <div id="break-timer" class="timer">
+              <p id="b_minutes">05</p><p class="semicolon">:</p><p id="b_seconds">00</p>
+          </div>
+          <button id="start" class="btn">Start</button>
+          <button id="stop" class="btn">Pause</button>
+          <button id="reset" class="btn">Reset</button>
+      </div>
+      <script src="pomodoro.js"></script>
+      <br>
+      <br>
+    <div class=contact>
+        <h4>Contact</h4>
+        <p>Phone Number: +628123456789
+        <br>
+        Email: example@gmail.com</p>
+        <p style="text-align: center;">@2021 Time's Up</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

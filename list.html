@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To Do List</title>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="list.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-dark bg-light main-nav">
+        <div class="container justify-content-center">
+            <ul class="nav navbar-nav flex-fill w-100 flex-nowrap">
+                <li class="nav-item active">
+                    <a class="nav-link" href="final.html" style='color: black;'>Home</a>
+                </li>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        
+                      </li>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style='color: black;'>
+                            Productivity Tools
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="list.html" style='color: black;'>To-do List</a>
+                            <a class="dropdown-item" href="Pomodoro.html" style='color: black;'>Pomodoro</a>
+                          </div>
+                      </li>
+                 
+                  </div>
+                
+
+            </ul>
+            <ul class="nav navbar-nav flex-fill justify-content-center">
+                <li class="nav-item">
+                    <a style="align-self: center;" class="navbar-brand" style='color: black;'>Time's Up</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav flex-fill w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="news.html" style='color: black;'>News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html" style='color: black;'>About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	<div class="container">
+		<div class="addTask">
+			<input type="text" placeholder="Add a Task">
+			<button>Add</button>
+		</div>
+
+		<ol class="notCompleted">
+			<h3>Not Completed</h3>
+		</ol>
+
+		<ol class="Completed">
+			<h3>Completed</h3>
+		</ol>
+	</div>
+
+	<script>
+		const input = document.querySelector('input');
+		const btn = document.querySelector('.addTask > button');
+
+		btn.addEventListener('click', addList);
+		input.addEventListener('keyup', (e)=>{
+			(e.keyCode === 13 ? addList(e) : null);
+		})
+
+		function addList(e){
+			const notCompleted = document.querySelector('.notCompleted');
+			const Completed = document.querySelector('.Completed');
+
+			const newLi = document.createElement('li');
+			const checkBtn = document.createElement('button');
+			const delBtn = document.createElement('button');
+
+			checkBtn.innerHTML = '<i class="fa fa-check"></i>';
+			delBtn.innerHTML = '<i class="fa fa-trash"></i>';
+
+
+			if(input.value !==''){
+				newLi.textContent = input.value;
+				input.value = '';
+				notCompleted.appendChild(newLi);
+				newLi.appendChild(checkBtn);
+				newLi.appendChild(delBtn);
+			}
+
+			checkBtn.addEventListener('click', function(){
+				const parent = this.parentNode;
+				parent.remove();
+				Completed.appendChild(parent);
+				checkBtn.style.display = 'none';
+			});
+
+			delBtn.addEventListener('click', function(){
+				const parent = this.parentNode;
+				parent.remove();
+			});
+		}
+
+	</script>
+	<div class=contact>
+		<h4>Contact</h4>
+		<p>Phone Number: +628123456789
+		<br>
+		Email: example@gmail.com</p>
+		<p style="text-align: center;">@2021 Time's Up</p>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
